@@ -1,0 +1,100 @@
+{
+  "patient": {
+    "date": "25/09/2025",
+    "age": 66,
+    "profession": "Retired",
+    "family": {
+      "hasFamily": true,
+      "married": "Yes (22 years of marriage)**  \n**",
+      "children": "No**  \n**"
+    },
+    "birthPlace": "Algeria**"
+  },
+  "consultation": {
+    "presentComplaint": "",
+    "covidHistory": "No Covid, No vaccine",
+    "tmPractice": "TM teacher/Ayurved consultant**  "
+  },
+  "assessment": {
+    "vitals": {
+      "pulse": "90/min, V++, Full, bound, rapid\t\tBowel – Normal 1- 2/day, gases \\++**",
+      "bowel": "Normal 1- 2/day, gases \\++**",
+      "urination": "Normal, at night 1–2-time\t\tTongue – Coated Aam \\+, wet, pink**",
+      "tongue": "Coated Aam \\+, wet, pink**",
+      "sleep": "11pm to 6am, good**",
+      "menstruation": "At 47 years menopause**"
+    },
+    "lifestyle": {
+      "food": {
+        "hoteling": "Hoteling 2-3 times/year\t\t\tOil – Olive, ghee**",
+        "oils": "Olive, ghee**",
+        "breakfast": "10am\t\t\t\t\tLunch – 1pm**",
+        "lunch": "1pm**",
+        "dinner": "9pm\t\t\t\t\t\tFruits – All seasonal**",
+        "fruits": "All seasonal**"
+      },
+      "smoking": "No\t\t\t\t\tAlcohol – No**",
+      "alcohol": "No**",
+      "exercise": "very less only walking\t\t\tEmotions – Suppress**",
+      "emotions": "Suppress**"
+    },
+    "ayurvedicAssessment": {
+      "prakruti": "Kapha-Vata\t\t\t\tVikruti \\- Vata**",
+      "dushya": "Rasa, Rakta, Meda**"
+    }
+  },
+  "treatment": {
+    "shamana": [
+      {
+        "medicine": "Triphala \\+ sesame oil \\+ warm water",
+        "dosage": "oil pulling"
+      }
+    ],
+    "panchakarma": [
+      "Self-Abhyanga (massage) – sesame oil (winter season) and coconut oil (summer season)",
+      "Nasya – put oil in nostril – warm coconut oil or ghee 2-3 drops in each nostril",
+      "Basti – Oil enema 3 days every month (Sesame oil – 100ml)"
+    ],
+    "additionalAdvice": [
+      "Aroma therapy for hypertension**  ",
+      "Chanting of mantras for anxiety, hypertension**  "
+    ]
+  },
+  "standardRecommendations": {
+    "avoidStopReduce": {
+      "en": "Dry beans, pulses, hard food to chew, heavy food to digest, pork oil, beef, pork meat, red meat, sea fish, spicy food, oily or fried food, refrigerated food, fast food, packed food, and cold drinks or ice cream, water with ice, aerated drinks, soda, water with gas. Take less quantity of food in family functions/parties and hoteling, less white sugar, chocolates and dairy products. DO NOT overeat. Well-control over stress, anger, worry, and fear, excessive talk, travelling and driving. No harsh words and gossiping.",
+      "fr": "Haricots secs, légumineuses, aliments difficiles à mâcher, aliments lourds à digérer, huile de porc, bœuf, viande de porc, viande rouge, poissons de mer, nourriture épicée, aliments gras ou frits, aliments réfrigérés, restauration rapide, aliments emballés, et boissons froides ou crème glacée, eau avec glace, boissons gazeuses, soda, eau avec gaz. Prendre moins de nourriture lors des fonctions/fêtes familiales et dans les restaurants, moins de sucre blanc, chocolats et produits laitiers. NE PAS trop manger. Bien contrôler le stress, la colère, l'inquiétude et la peur, les discussions excessives, les voyages et la conduite. Pas de mots durs et de commérages."
+    },
+    "takeUse": {
+      "en": "Always eat freshly prepared and warm food, follow cook and eat same day principle, organic food, green gram, roasted pulses, or beans (once in week), fresh and green vegetables++, fruits++, fish from river, eggs, olive oil, tofu, ghee, flax seed oil. Respect your hunger, do not overeat. Drink 1 glass of warm water (200ml) morning and evening.",
+      "fr": "Mangez toujours des aliments fraîchement préparés et chauds, suivez le principe de cuisiner et manger le même jour, nourriture biologique, haricot mungo, légumineuses grillées ou haricots (une fois par semaine), légumes frais et verts++, fruits++, poisson de rivière, œufs, huile d'olive, tofu, ghee, huile de graines de lin. Respectez votre faim, ne mangez pas trop. Buvez 1 verre d'eau chaude (200ml) matin et soir."
+    },
+    "lifestyle": {
+      "en": "Sleep time 09:30 to 10:00 pm - wake up time 05:30am to 06:00am. Physical exercise (swimming, walking, running, skipping for minimum 30 minutes every day). Pranayama – Bhsatrika, Bhramari, Kapalbahti and Anulom - Vilom, meditation, Surya Namaskar (sun salutation) and yoga postures (as per stretching capacity) – always use warm water for bathing, oil application (self-massage) – reduce use of air conditioner, chant or listen Gayatri mantra. Help needy people, keep smiling.",
+      "fr": "Heure de sommeil 21h30 à 22h00 - heure de réveil 05h30 à 06h00. Exercice physique (natation, marche, course, saut à la corde pendant minimum 30 minutes chaque jour). Pranayama – Bhsatrika, Bhramari, Kapalbahti et Anulom - Vilom, méditation, Surya Namaskar (salutation au soleil) et postures de yoga (selon la capacité d'étirement) – utilisez toujours de l'eau chaude pour le bain, application d'huile (auto-massage) – réduisez l'utilisation de la climatisation, chantez ou écoutez le mantra Gayatri. Aidez les personnes dans le besoin, gardez le sourire."
+    },
+    "selfCare": {
+      "en": "Do steam inhalation, abhyanga (self-massage of coconut oil, sesame oil, mustard oil), Shiroabhyanga (head massage or application of coconut oil on scalp), Padabhyanga (application of coconut oil to feet), Nasya (2-3 drops of ghee – clarified butter or coconut oil in nostrils), Hrid pichu (application of coconut oil on chest at cardiac region), and Nabhi puran (10 drops of coconut oil at umbilicus), Udar pichu (application of castor oil at the site of liver/lower abdomen).",
+      "fr": "Faites des inhalations de vapeur, abhyanga (auto-massage avec huile de coco, huile de sésame, huile de moutarde), Shiroabhyanga (massage de la tête ou application d'huile de coco sur le cuir chevelu), Padabhyanga (application d'huile de coco sur les pieds), Nasya (2-3 gouttes de ghee – beurre clarifié ou huile de coco dans les narines), Hrid pichu (application d'huile de coco sur la poitrine dans la région cardiaque), et Nabhi puran (10 gouttes d'huile de coco à l'ombilic), Udar pichu (application d'huile de ricin au niveau du foie/abdomen inférieur)."
+    },
+    "mentalWellness": {
+      "en": "Increase satva quality of mind, keep patience, most importantly, do work/job sincerely, keep busy in constructive work, think good for others, be positive, help others, spend good time with kids and family members, don't argue and don't have any conversation in negative way.",
+      "fr": "Augmentez la qualité satva de l'esprit, gardez patience, le plus important, faites votre travail/emploi sincèrement, restez occupé dans un travail constructif, pensez du bien des autres, soyez positif, aidez les autres, passez du bon temps avec les enfants et les membres de la famille, ne vous disputez pas et n'ayez aucune conversation de manière négative."
+    },
+    "panchakarmaAdvice": {
+      "en": "Advice for Panchakarma - Snehan, Swedan, Shirodhara, Virechan, and Basti for 8 to 15 days every year.",
+      "fr": "Conseil pour Panchakarma - Snehan, Swedan, Shirodhara, Virechan, et Basti pendant 8 à 15 jours chaque année."
+    },
+    "followUp": {
+      "en": "Follow up lifestyle consultation after 3 months online or offline.",
+      "fr": "Consultation de suivi du mode de vie après 3 mois en ligne ou hors ligne."
+    }
+  },
+  "metadata": {
+    "createdAt": "2025-09-30T18:12:33.313486",
+    "lastModified": "2025-09-30T18:12:33.313494",
+    "version": "1.0",
+    "language": "en",
+    "originalFile": "Fariza Baum - 5.md"
+  }
+}

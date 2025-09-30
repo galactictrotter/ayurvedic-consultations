@@ -1,0 +1,288 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ayurvedic Lifestyle Consultation",
+  "type": "object",
+  "required": ["patient", "consultation", "assessment", "treatment"],
+  "properties": {
+    "patient": {
+      "type": "object",
+      "required": ["name", "age", "sex", "date"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Patient's full name"
+        },
+        "age": {
+          "type": "integer",
+          "description": "Patient's age in years"
+        },
+        "sex": {
+          "type": "string",
+          "enum": ["Male", "Female", "Other"]
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Consultation date (DD/MM/YYYY)"
+        },
+        "profession": {
+          "type": "string",
+          "description": "Patient's occupation or profession"
+        },
+        "family": {
+          "type": "object",
+          "properties": {
+            "hasFamily": {
+              "type": "boolean"
+            },
+            "married": {
+              "type": "string",
+              "description": "Marital status details"
+            },
+            "children": {
+              "type": "string",
+              "description": "Children information"
+            }
+          }
+        },
+        "birthPlace": {
+          "type": "string",
+          "description": "Place of birth"
+        },
+        "pets": {
+          "type": "string",
+          "description": "Pet information if applicable"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Patient's email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Patient's phone number"
+        }
+      }
+    },
+    "consultation": {
+      "type": "object",
+      "required": ["presentComplaint"],
+      "properties": {
+        "presentComplaint": {
+          "type": "string",
+          "description": "Main health complaints and concerns"
+        },
+        "medicalHistory": {
+          "type": "string",
+          "description": "Past medical history, surgeries, conditions"
+        },
+        "covidHistory": {
+          "type": "string",
+          "description": "COVID infection and vaccination history"
+        },
+        "tmPractice": {
+          "type": "string",
+          "description": "Transcendental Meditation practice history"
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "vitals": {
+          "type": "object",
+          "properties": {
+            "pulse": {
+              "type": "string",
+              "description": "Pulse characteristics (rate/min, quality)"
+            },
+            "bowel": {
+              "type": "string",
+              "description": "Bowel movement patterns"
+            },
+            "urination": {
+              "type": "string",
+              "description": "Urination patterns"
+            },
+            "tongue": {
+              "type": "string",
+              "description": "Tongue examination findings"
+            },
+            "sleep": {
+              "type": "string",
+              "description": "Sleep patterns and quality"
+            },
+            "hunger": {
+              "type": "string",
+              "description": "Appetite and hunger patterns"
+            },
+            "thirst": {
+              "type": "string",
+              "description": "Thirst patterns"
+            },
+            "menstruation": {
+              "type": "string",
+              "description": "Menstrual history (for females)"
+            }
+          }
+        },
+        "lifestyle": {
+          "type": "object",
+          "properties": {
+            "dailyRoutine": {
+              "type": "string"
+            },
+            "smoking": {
+              "type": "string"
+            },
+            "alcohol": {
+              "type": "string"
+            },
+            "exercise": {
+              "type": "string"
+            },
+            "emotions": {
+              "type": "string"
+            },
+            "food": {
+              "type": "object",
+              "properties": {
+                "hoteling": {
+                  "type": "string"
+                },
+                "oils": {
+                  "type": "string"
+                },
+                "breakfast": {
+                  "type": "string"
+                },
+                "lunch": {
+                  "type": "string"
+                },
+                "dinner": {
+                  "type": "string"
+                },
+                "fruits": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "ayurvedicAssessment": {
+          "type": "object",
+          "properties": {
+            "prakruti": {
+              "type": "string",
+              "description": "Constitutional type"
+            },
+            "vikruti": {
+              "type": "string",
+              "description": "Current imbalance"
+            },
+            "dosha": {
+              "type": "string",
+              "description": "Dosha assessment"
+            },
+            "dushya": {
+              "type": "string",
+              "description": "Affected tissues/systems"
+            }
+          }
+        }
+      }
+    },
+    "treatment": {
+      "type": "object",
+      "properties": {
+        "shamana": {
+          "type": "array",
+          "description": "Internal medicines with exact dosages",
+          "items": {
+            "type": "object",
+            "properties": {
+              "medicine": {
+                "type": "string",
+                "description": "Medicine name/code (e.g., MA579)"
+              },
+              "dosage": {
+                "type": "string",
+                "description": "Exact dosage instructions"
+              }
+            }
+          }
+        },
+        "panchakarma": {
+          "type": "array",
+          "description": "Physical therapy recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "additionalAdvice": {
+          "type": "array",
+          "description": "Additional specific recommendations",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "standardRecommendations": {
+      "type": "object",
+      "description": "Standard recommendations that appear in all consultations",
+      "properties": {
+        "avoidStopReduce": {
+          "type": "string",
+          "description": "Standard avoid/stop/reduce recommendations"
+        },
+        "takeUse": {
+          "type": "string",
+          "description": "Standard dietary recommendations"
+        },
+        "lifestyle": {
+          "type": "string",
+          "description": "Standard lifestyle recommendations"
+        },
+        "selfCare": {
+          "type": "string",
+          "description": "Standard self-care practices"
+        },
+        "mentalWellness": {
+          "type": "string",
+          "description": "Standard mental wellness advice"
+        },
+        "panchakarmaAdvice": {
+          "type": "string",
+          "description": "Standard Panchakarma recommendation"
+        },
+        "followUp": {
+          "type": "string",
+          "description": "Standard follow-up instructions"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastModified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string",
+          "default": "1.0"
+        },
+        "language": {
+          "type": "string",
+          "enum": ["en", "fr", "en-fr"],
+          "default": "en"
+        }
+      }
+    }
+  }
+}
