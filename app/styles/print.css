@@ -1,0 +1,163 @@
+/* Plantissima Design Tokens */
+:root {
+  --brand-red: #D85344;
+  --plantissima-green: #65695b;
+  --earthy-olive: #7D8B4C;
+  --golden-yellow: #F2B21A;
+  --dark-gray: #404040;
+  --medium-gray: #6E6E6E;
+  --light-gray: #F0F0F0;
+  --off-white: #FCFCFC;
+}
+
+@page {
+  size: A4;
+  margin: 0.5in; /* 0.5 inch all around */
+}
+
+body {
+  font-family: "Gentium Book Plus", serif;
+  line-height: 1.35;
+  hyphens: auto;
+  font-size: 11pt;
+  color: var(--dark-gray);
+}
+
+h1 {
+  font-family: "Gentium Book Plus", serif;
+  font-size: 18pt;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 12pt;
+  color: var(--dark-gray);
+  letter-spacing: 0.02rem;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  font-size: 14pt;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 16pt;
+  margin-bottom: 8pt;
+  color: var(--brand-red);
+  letter-spacing: 0.02rem;
+}
+
+h3 {
+  font-family: "Gentium Book Plus", serif;
+  font-size: 12pt;
+  font-weight: 600;
+  margin-top: 12pt;
+  margin-bottom: 6pt;
+  color: var(--plantissima-green);
+}
+
+h1, h2, h3 {
+  page-break-after: avoid;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10pt;
+  margin-bottom: 12pt;
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10pt;
+  margin-bottom: 8pt;
+  border-bottom: 2px solid var(--brand-red);
+  padding-bottom: 6pt;
+  color: var(--medium-gray);
+}
+
+.patient-block {
+  background-color: var(--off-white);
+  padding: 10pt;
+  margin-bottom: 14pt;
+  border-left: 3pt solid var(--earthy-olive);
+  border-radius: 0.15rem;
+}
+
+.patient-block strong {
+  color: var(--plantissima-green);
+}
+
+.content {
+  margin-bottom: 10pt;
+  line-height: 1.4;
+}
+
+ul {
+  margin: 6pt 0;
+  padding-left: 18pt;
+}
+
+li {
+  margin-bottom: 4pt;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* French typography: thin non-breaking spaces */
+.lang-fr {
+  /* Content should use &#8239; before ; : ? ! and around « » */
+}
+
+.lang-fr h1,
+.lang-fr h2,
+.lang-fr h3 {
+  /* Ensure French headers use proper spacing */
+}
+
+/* Section spacing for bilingual documents */
+section {
+  margin-bottom: 20pt;
+}
+
+section + section {
+  border-top: 2pt solid var(--light-gray);
+  padding-top: 20pt;
+}
+
+/* Accent colors for lists and emphasis */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "• ";
+  color: var(--golden-yellow);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Category tags / labels */
+.category, .badge {
+  background-color: var(--earthy-olive);
+  color: white;
+  padding: 2pt 6pt;
+  border-radius: 0.15rem;
+  font-size: 9pt;
+  font-weight: 600;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

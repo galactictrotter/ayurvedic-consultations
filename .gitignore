@@ -25,3 +25,13 @@ Thumbs.db
 
 # Claude settings
 .claude/
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Output PDFs
+app/output/*.pdf
+
+# Old converted files (keep converted2 for now)
+converted/

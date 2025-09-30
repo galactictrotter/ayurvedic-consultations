@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="utf-8">
+  <title><%= t("title", lang) %></title>
+
+  <!-- Plantissima Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    <%= File.read(File.join(File.dirname(__FILE__), '..', 'styles', 'print.css')) %>
+  </style>
+</head>
+<body>
+  <% sections = (lang == "bi" ? ["en","fr"] : [lang]) %>
+  <% sections.each do |section_lang| %>
+  <section lang="<%= section_lang %>" class="lang-<%= section_lang %>">
+    <header class="doc-header">
+      <div><%= t("title", section_lang) %></div>
+      <div><%= client.dig("patient","name") %></div>
+    </header>
+
+    <h1><%= t("title", section_lang) %></h1>
+
+    <div class="patient-block">
+      <strong><%= t("patient", section_lang) %>:</strong>
+      <%= client.dig("patient","name") %><br>
+      <% if client.dig("patient","age") %>
+      <strong>Age:</strong> <%= client.dig("patient","age") %> years<br>
+      <% end %>
+      <% if client.dig("patient","sex") %>
+      <strong>Sex:</strong> <%= client.dig("patient","sex") %><br>
+      <% end %>
+      <strong><%= t("date", section_lang) %>:</strong>
+      <%= client.dig("patient","date") %>
+    </div>
+
+    <h2>Present Complaint</h2>
+    <div class="content">
+      <%= client.dig("consultation","presentComplaint") %>
+    </div>
+
+    <h2><%= t("assessment", section_lang) %></h2>
+
+    <% if client.dig("assessment","vitals") && !client.dig("assessment","vitals").empty? %>
+      <h3>Vitals</h3>
+      <div class="content">
+        <% client.dig("assessment","vitals").each do |key, value| %>
+          <strong><%= key.capitalize %>:</strong> <%= value %><br>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if client.dig("assessment","lifestyle") %>
+      <h3>Lifestyle</h3>
+      <div class="content">
+        <% client.dig("assessment","lifestyle").each do |key, value| %>
+          <% if key == "food" && value.is_a?(Hash) %>
+            <strong>Food:</strong><br>
+            <% value.each do |food_key, food_value| %>
+              &nbsp;&nbsp;<em><%= food_key.capitalize %>:</em> <%= food_value %><br>
+            <% end %>
+          <% else %>
+            <strong><%= key.capitalize %>:</strong> <%= value %><br>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if client.dig("assessment","ayurvedicAssessment") && !client.dig("assessment","ayurvedicAssessment").empty? %>
+      <h3>Ayurvedic Assessment</h3>
+      <div class="content">
+        <% client.dig("assessment","ayurvedicAssessment").each do |key, value| %>
+          <strong><%= key.capitalize %>:</strong> <%= value %><br>
+        <% end %>
+      </div>
+    <% end %>
+
+    <h2><%= t("treatment", section_lang) %></h2>
+
+    <% if client.dig("treatment","shamana") && !client.dig("treatment","shamana").empty? %>
+      <h3>Shamana (Internal Medicine)</h3>
+      <div class="content">
+        <ul>
+        <% client.dig("treatment","shamana").each do |med| %>
+          <li>
+            <strong><%= med["medicine"] %></strong>
+            <% if med["dosage"] && !med["dosage"].empty? %>
+              – <%= med["dosage"] %>
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if client.dig("treatment","panchakarma") && !client.dig("treatment","panchakarma").empty? %>
+      <h3>Panchakarma</h3>
+      <div class="content">
+        <ul>
+        <% client.dig("treatment","panchakarma").each do |therapy| %>
+          <li><%= therapy %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if client.dig("treatment","additionalAdvice") && !client.dig("treatment","additionalAdvice").empty? %>
+      <h3>Additional Advice</h3>
+      <div class="content">
+        <ul>
+        <% client.dig("treatment","additionalAdvice").each do |advice| %>
+          <li><%= advice %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <h2><%= t("recommendations", section_lang) %></h2>
+    <div class="columns">
+      <div>
+        <h3><%= t("avoid", section_lang) %></h3>
+        <%= pick_lang(client.dig("standardRecommendations","avoidStopReduce"), section_lang) %>
+      </div>
+      <div>
+        <h3><%= t("take", section_lang) %></h3>
+        <%= pick_lang(client.dig("standardRecommendations","takeUse"), section_lang) %>
+      </div>
+      <div>
+        <h3><%= t("lifestyle", section_lang) %></h3>
+        <%= pick_lang(client.dig("standardRecommendations","lifestyle"), section_lang) %>
+      </div>
+      <div>
+        <h3><%= t("selfcare", section_lang) %></h3>
+        <%= pick_lang(client.dig("standardRecommendations","selfCare"), section_lang) %>
+      </div>
+    </div>
+
+    <% if client.dig("standardRecommendations","mentalWellness") %>
+      <h3>Mental Wellness</h3>
+      <div class="content">
+        <%= pick_lang(client.dig("standardRecommendations","mentalWellness"), section_lang) %>
+      </div>
+    <% end %>
+
+    <% if client.dig("standardRecommendations","panchakarmaAdvice") %>
+      <h3>Panchakarma Advice</h3>
+      <div class="content">
+        <%= pick_lang(client.dig("standardRecommendations","panchakarmaAdvice"), section_lang) %>
+      </div>
+    <% end %>
+
+    <% if client.dig("standardRecommendations","followUp") %>
+      <h3>Follow-up</h3>
+      <div class="content">
+        <%= pick_lang(client.dig("standardRecommendations","followUp"), section_lang) %>
+      </div>
+    <% end %>
+
+    <% if client["notes"] %>
+      <h2><%= t("notes", section_lang) %></h2>
+      <div class="content"><%= pick_lang(client["notes"], section_lang) %></div>
+    <% end %>
+
+    <div class="page-break"></div>
+  </section>
+  <% end %>
+</body>
+</html>
